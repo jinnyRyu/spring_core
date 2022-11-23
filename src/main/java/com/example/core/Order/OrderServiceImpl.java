@@ -4,13 +4,15 @@ import com.example.core.discount.DscountPolicy;
 import com.example.core.member.Member;
 import com.example.core.member.MemberRepository;
 import com.example.core.member.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class OrderServiceImpl implements OderService{
 
     private final MemberRepository memberRepository;
     private final DscountPolicy discountPolicy;
-
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
